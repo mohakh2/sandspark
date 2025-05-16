@@ -1,5 +1,6 @@
 import spark from "../../public/spark.svg";
 import Image from "next/image";
+import Accordion from "@/components/accordion";
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center text-center h-screen">
@@ -44,6 +45,10 @@ export default function Home() {
           higher engagement with AI<br/>chatbot support
         </span>
       </div>
+      </div>
+      <div className="flex justify-between">
+      <Accordion/> 
+      <Accordion/>       
       </div>
     </div>
   );
