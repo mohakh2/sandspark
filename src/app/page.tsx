@@ -1,55 +1,69 @@
-import spark from "../../public/spark.svg";
-import Image from "next/image";
-import Accordion from "@/components/accordion";
+import HomeTemplate from "@/components/templates/HomeTemplate";
+
 export default function Home() {
+  const heroData = {
+    firstLine: "Websites that Work.",
+    secondLine: "Ideas that ",
+    highlightWord: "Ignite"
+  };
+
+  const description = 
+    "We design high-impact websites and smart digital tools for small businesses ready to grow. From full sites to custom-built chatbots, we help you connect with your audience and convert clicks into customers.";
+
+  const ctaButtons = [
+    {
+      label: "See Our Services",
+      href: "/services",
+      variant: "primary" as const
+    },
+    {
+      label: "Get a Free Quote",
+      href: "/contact",
+      variant: "secondary" as const
+    }
+  ];
+
+  const stats = [
+    {
+      value: "74%",
+      label: "of consumers judge\ncredibility by website design"
+    },
+    {
+      value: "56%",
+      label: "of businesses\nsee higher ROI after redesign"
+    },
+    {
+      value: "80%",
+      label: "higher engagement with AI\nchatbot support"
+    }
+  ];
+
+  const serviceData = [
+    {
+      title: "Website Design & Development",
+      content: "From landing pages to full-stack platforms, we create sleek, responsive websites tailored to your brand. Whether you need an eCommerce store or a personal portfolio, we've got you covered."
+    },
+    {
+      title: "Ai Chatbots & Assistants",
+      content: "Engage visitors, automate support, and drive leads with bots that sound human and work 24/7—perfect for sales, FAQs, or customer support."
+    },
+    {
+      title: "Custom Web Scrapers",
+      content: "Need data from websites? Our scrapers can extract information from almost any site reliably, whether for market research, competitor tracking, or analytics."
+    },
+    {
+      title: "OCR Tools",
+      content: "Convert scanned documents, images, or handwritten notes into editable, searchable text with our advanced Optical Character Recognition tools."
+    }
+  ];
+
   return (
-    <div className="flex flex-col items-center justify-center text-center h-screen">
-      <p className="font-bold text-[var(--text-primary)] text-8xl">
-        Websites that Work. <br />
-        Ideas that <span className="text-[var(--text-secondary)] relative">
-          <Image 
-            className="absolute -top-25 -right-30" 
-            src={spark} 
-            alt="logo" 
-            width={225} 
-            height={225} 
-          />
-          Ignite
-        </span>
-      </p>
-      <p className="text-black text-2xl max-w-2xl">
-        We design high-impact websites and smart digital tools for small businesses 
-        ready to grow. From full sites to <br/> custom-built chatbots, we help you connect 
-        with your audience and convert clicks into customers.
-      </p>
-      <div className="flex gap-4">
-        <a href="/services" className="bg-[var(--button-primary)] text-white px-4 py-2 rounded-md  hover:text-decoration-line:none">See Our Services</a>
-        <a href="/contact" className="bg-[var(--button-secondary)] text-white px-4 py-2 rounded-md  hover:text-decoration-line:none">Get a Free Quote</a>
-      </div>
-      <div className="w-full h-[200px] bg-[var(--button-secondary)] my-8 flex justify-between items-center px-20">
-      <div className="flex items-center ">
-      <span className="text-white text-7xl font-bold">74%</span>
-        <span className="text-white text-2xl font-bold text-left">
-          of consumers judge<br/>credibility by website design
-        </span>
-      </div>
-      <div className="flex items-center ">
-      <span className="text-white text-7xl font-bold">56%</span>
-        <span className="text-white text-2xl font-bold text-left">
-          of businesses<br/>see higher ROI after redesign
-        </span>
-      </div>
-      <div className="flex items-center ">
-      <span className="text-white text-7xl font-bold">80%</span>
-        <span className="text-white text-2xl font-bold text-left">
-          higher engagement with AI<br/>chatbot support
-        </span>
-      </div>
-      </div>
-      <div className="flex justify-between">
-      <Accordion/> 
-      <Accordion/>       
-      </div>
-    </div>
+    <HomeTemplate
+      heroData={heroData}
+      description={description}
+      ctaButtons={ctaButtons}
+      stats={stats}
+      serviceData={serviceData}
+    />
   );
 }
