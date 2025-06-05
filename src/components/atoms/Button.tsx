@@ -1,36 +1,40 @@
 'use client'
 
-type ButtonProps = {
-  variant: 'primary' | 'secondary'
+import Link from "next/link"
+import { ButtonHTMLAttributes } from "react"
+
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant: 'primary' | 'secondary' | 'navbar'
   children: React.ReactNode
   href?: string
-  onClick?: () => void
 }
 
 export default function Button({
   variant = 'primary',
   children,
   href,
-  onClick
+  className: customClassName,
+  ...props
 }: ButtonProps) {
-  const baseStyles = "px-4 py-2 rounded-md text-white hover:text-decoration-line:none"
+  const baseStyles = "px-4 py-2 rounded-md  hover:text-decoration-line:none"
   const variantStyles = {
-    primary: "bg-[var(--button-primary)]",
-    secondary: "bg-[var(--button-secondary)]"
+    primary: "text-white bg-[var(--button-primary)]",
+    secondary: "text-white bg-[var(--button-secondary)]",
+    navbar: "text-black"
   }
   
-  const className = `${baseStyles} ${variantStyles[variant]}`
+  const className = `${baseStyles} ${variantStyles[variant]} ${customClassName || ''}`
   
   if (href) {
     return (
-      <a href={href} className={className}>
+      <Link href={href} className={className}>
         {children}
-      </a>
+      </Link>
     )
   }
   
   return (
-    <button onClick={onClick} className={className}>
+    <button className={className} {...props}>
       {children}
     </button>
   )

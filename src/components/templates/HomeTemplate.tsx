@@ -6,7 +6,6 @@ import ButtonGroup from "../molecules/ButtonGroup";
 import StatsBar from "../organisms/StatsBar";
 import ServiceAccordion from "../organisms/ServiceAccordion";
 import Navbar from "../navbar";
-import ChatBox from "../molecules/ChatBox";
 import { useRef } from "react";
 
 type HomeTemplateProps = {
@@ -38,27 +37,17 @@ export default function HomeTemplate({
   stats,
   serviceData
 }: HomeTemplateProps) {
-  const heroRef = useRef<HTMLDivElement>(null);
   const servicesRef = useRef<HTMLParagraphElement>(null);
   const chatBoxRef = useRef<{ openChat: () => void }>(null);
-
-  const scrollToHero = () => {
-    heroRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const scrollToServices = () => {
-    servicesRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   const openChatBox = () => {
     chatBoxRef.current?.openChat();
   };
 
   return (
     <>
-    <Navbar onHomeClick={scrollToHero} onServicesClick={scrollToHero} onProcessClick={scrollToHero} onAboutClick={scrollToHero} onContactClick={scrollToHero} />
+    <Navbar/>
 
-    <div ref={heroRef} className="flex flex-col items-center justify-center text-center h-screen">
+    <div className="mt-20 flex flex-col items-center justify-center text-center h-screen">
       <HeroHeading       
         firstLine={heroData.firstLine}
         secondLine={heroData.secondLine}
@@ -81,7 +70,6 @@ export default function HomeTemplate({
       </div>
     </div>
     
-    <ChatBox ref={chatBoxRef} />
     </>
   );
 } 

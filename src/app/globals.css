@@ -23,6 +23,9 @@
   --error: #ff0000;
   --warning: #f5a623;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 @theme inline {
   --color-background: var(--background);

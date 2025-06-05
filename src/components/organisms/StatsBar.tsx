@@ -9,7 +9,7 @@ type StatsBarProps = {
 
 export default function StatsBar({ stats }: StatsBarProps) {
   return (
-    <div className="w-full h-[200px] bg-[var(--button-secondary)] my-8 flex justify-between items-center px-20">
+    <div className="w-full h-[200px] bg-[var(--button-secondary)] my-10 flex justify-between items-center px-20 py-10">
       {stats.map((stat, index) => (
         <Stat 
           key={index}
