@@ -34,7 +34,7 @@ export default function FeatureShowcase({ title, features }: FeatureShowcaseProp
     <section className="py-10 sm:py-16 w-full px-4" id="about">
       <div className="container mx-auto">
         <Heading size="md" className="text-center mb-6 sm:mb-12">{title}</Heading>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 justify-items-center">
           {features.map((feature, index) => (
             <FeatureCard
               key={index}

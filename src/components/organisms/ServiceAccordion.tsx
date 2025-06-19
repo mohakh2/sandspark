@@ -1,6 +1,8 @@
 'use client'
 import { useState } from "react";
 import AccordionItem from "../molecules/AccordionItem";
+import Image from "next/image";
+import sparkySvg from "../../../public/sparky.svg";
 
 type ServiceData = {
   title: string
@@ -37,11 +39,14 @@ export default function ServiceAccordion({
         />
       ))}
       <div 
-        className="border-t-2 border-black mt-4 pt-4 flex items-center justify-between text-sm cursor-pointer"
+        className="mt-6 p-3 flex items-center justify-between rounded-lg bg-[#FFB74C] hover:bg-[#FFD699] transition-colors cursor-pointer shadow-md"
         onClick={onChatbotClick}
       >
-        <span>Use our Chatbot to find out more about SandSpark!</span>
-        <span className="text-xl">→</span>
+        <div className="flex items-center gap-2">
+          <Image src={sparkySvg} alt="Sparky the Chatbot" width={30} height={30} />
+          <span className="font-medium">Chat with Sparky to learn more about our services</span>
+        </div>
+        <span className="text-xl font-bold">→</span>
       </div>
     </div>
   )

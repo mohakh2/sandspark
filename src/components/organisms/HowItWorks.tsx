@@ -32,7 +32,7 @@ export default function HowItWorks({ title, subtitle, steps }: HowItWorksProps) 
                   key={step.number}
                   className={`flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}
                 >
-                  <div className="bg-amber-100 rounded-lg sm:rounded-xl px-4 sm:px-6 py-3 sm:py-4 shadow-md border border-amber-300 max-w-[90%] sm:max-w-[80%]">
+                  <div className="bg-[#E9E9D8] rounded-lg sm:rounded-xl px-4 sm:px-6 py-3 sm:py-4 shadow-md border border-amber-300 max-w-[90%] sm:max-w-[80%]">
                     <p className="text-gray-800 text-sm sm:text-base">
                       <span className="font-bold">{step.number}. {step.title}</span> — {step.description}
                     </p>
