@@ -1,7 +1,8 @@
 {
     "piny.project_settings": {
         "open-pages": [
-            "index.html"
+            "index.html",
+            "pinyfakepage.html"
         ],
         "urls": {
             "index.html": {
@@ -11,7 +12,36 @@
                         "h": 0
                     }
                 ]
+            },
+            "pinyfakepage.html": {
+                "open-page-views": [
+                    {
+                        "w": 1566.99,
+                        "h": 0
+                    }
+                ]
             }
-        }
+        },
+        "tw-external-config": {},
+        "source-folders": null,
+        "preview-url": "http://localhost:3000",
+        "ai-project-brief": null,
+        "recent-classes": [
+            "6",
+            "/",
+            "5",
+            "l",
+            "x",
+            "2",
+            "w",
+            "a",
+            "h",
+            "s",
+            "-",
+            "p",
+            "o",
+            "r",
+            "d"
+        ]
     }
 }

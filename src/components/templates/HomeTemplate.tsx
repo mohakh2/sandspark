@@ -6,8 +6,10 @@ import ButtonGroup from "../molecules/ButtonGroup";
 import StatsBar from "../organisms/StatsBar";
 import ServiceAccordion from "../organisms/ServiceAccordion";
 import Navbar from "../navbar";
+import FeatureShowcase from "../organisms/FeatureShowcase";
+import HowItWorks from "../organisms/HowItWorks";
 import { useRef } from "react";
-
+import ChatBox from "../molecules/ChatBox";
 type HomeTemplateProps = {
   heroData: {
     firstLine: string
@@ -28,6 +30,23 @@ type HomeTemplateProps = {
     title: string
     content: string
   }[]
+  featureData: {
+    title: string
+    features: {
+      icon: string
+      title: string
+      description: string
+    }[]
+  }
+  howItWorksData: {
+    title: string
+    subtitle: string
+    steps: {
+      number: number
+      title: string
+      description: string
+    }[]
+  }
 }
 
 export default function HomeTemplate({
@@ -35,7 +54,9 @@ export default function HomeTemplate({
   description,
   ctaButtons,
   stats,
-  serviceData
+  serviceData,
+  featureData,
+  howItWorksData
 }: HomeTemplateProps) {
   const servicesRef = useRef<HTMLParagraphElement>(null);
   const chatBoxRef = useRef<{ openChat: () => void }>(null);
@@ -61,11 +82,27 @@ export default function HomeTemplate({
       <ButtonGroup buttons={ctaButtons} />
       
       <StatsBar stats={stats} />
+
       
-      <div className="flex justify-between">
+      
+      <div className="flex justify-around">
         <ServiceAccordion 
           services={serviceData}
           onChatbotClick={openChatBox}
+        />
+        <ChatBox/>
+      </div>
+
+      <FeatureShowcase
+        title={featureData.title}
+        features={featureData.features}
+      />
+
+      <div className="my-16">
+        <HowItWorks 
+          title={howItWorksData.title}
+          subtitle={howItWorksData.subtitle}
+          steps={howItWorksData.steps}
         />
       </div>
     </div>

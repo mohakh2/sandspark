@@ -57,13 +57,63 @@ export default function Home() {
     }
   ];
 
+  const featureData = {
+    title: "Why Businesses Choose SandSpark",
+    features: [
+      {
+        icon: "/globe.svg",
+        title: "Tailored Web Solutions",
+        description: "We don't believe in cookie-cutter sites. Every website and chatbot is custom-built to engage your audience and drive real results."
+      },
+      {
+        icon: "/sparky.svg",
+        title: "Smart Automation, Real Conversations",
+        description: "From digital assistants to intelligent OCR tools, we bring automation to life — making your business more responsive, efficient, and customer-focused."
+      },
+      {
+        icon: "/rocket.svg",
+        title: "Built for Growth, Designed to Last",
+        description: "We create digital experiences that scale with you — so you can focus on growing your business, not outgrowing your technology."
+      }
+    ]
+  };
+
+  const howItWorksData = {
+    title: "How it Works",
+    subtitle: "From Idea to Launch—Here's How We Do It",
+    steps: [
+      {
+        number: 1,
+        title: "Discover",
+        description: "We get to know your business, goals, and audience."
+      },
+      {
+        number: 2,
+        title: "Design",
+        description: "Wireframes, mockups, and prototypes tailored to your brand."
+      },
+      {
+        number: 3,
+        title: "Develop",
+        description: "Clean, responsive code with SEO and performance in mind."
+      },
+      {
+        number: 4,
+        title: "Launch & Support",
+        description: "We don't just ship—we stick around to help."
+      }
+    ]
+  };
+
   return (
     <HomeTemplate
+      featureData={featureData}
       heroData={heroData}
       description={description}
       ctaButtons={ctaButtons}
       stats={stats}
       serviceData={serviceData}
+      howItWorksData={howItWorksData}
     />
   );
 }
