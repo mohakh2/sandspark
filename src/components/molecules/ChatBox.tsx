@@ -15,9 +15,7 @@ export default function ChatBox() {
     setIsOpen(false);
   };
 
-  // For component references from parent
   if (typeof window !== "undefined") {
-    // @ts-ignore
     window.openChatBox = openChat;
   }
 

@@ -67,7 +67,6 @@ export default function HomeTemplate({
   howItWorksData
 }: HomeTemplateProps) {
   const servicesRef = useRef<HTMLParagraphElement>(null);
-  const chatBoxRef = useRef<{ openChat: () => void }>(null);
   
   const openChatBox = () => {
     if (typeof window !== 'undefined' && window.openChatBox) {
