@@ -25,7 +25,8 @@ export default function ServiceAccordion({
   }
 
   return (
-    <div className="text-black font-sans p-6 max-w-xl mx-auto rounded-md" id="test">
+    <div className="text-black font-sans p-4 sm:p-6 w-full sm:w-auto max-w-full sm:max-w-xl mx-auto rounded-md" id="services">
+      <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">Our Services</h2>
       {services.map((item, index) => (
         <AccordionItem
           key={index}

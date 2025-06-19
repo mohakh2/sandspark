@@ -12,9 +12,9 @@ const Paragraph = forwardRef<HTMLParagraphElement, ParagraphProps>(({
   className = ''
 }, ref) => {
   const sizeStyles = {
-    lg: 'text-2xl',
-    md: 'text-base',
-    sm: 'text-sm'
+    lg: 'text-lg sm:text-xl md:text-2xl',
+    md: 'text-sm sm:text-base',
+    sm: 'text-xs sm:text-sm'
   }
   
   return (
