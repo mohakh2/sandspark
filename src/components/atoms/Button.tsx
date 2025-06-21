@@ -4,7 +4,7 @@ import Link from "next/link"
 import { ButtonHTMLAttributes } from "react"
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant: 'primary' | 'secondary' | 'navbar'
+  variant: 'primary' | 'secondary' | 'navbar' | 'contact'
   children: React.ReactNode
   href?: string
 }
@@ -20,7 +20,8 @@ export default function Button({
   const variantStyles = {
     primary: "text-white bg-[var(--button-primary)]",
     secondary: "text-white bg-[var(--button-secondary)]",
-    navbar: "text-black"
+    navbar: "text-black",
+    contact: "text-white bg-[var(--button-primary)] w-[200px] text-center text-lg font-bold"
   }
   
   const className = `${baseStyles} ${variantStyles[variant]} ${customClassName || ''}`

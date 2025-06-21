@@ -10,6 +10,9 @@ import FeatureShowcase from "../organisms/FeatureShowcase";
 import HowItWorks from "../organisms/HowItWorks";
 import { useRef } from "react";
 import ChatBox from "../molecules/ChatBox";
+import Button from "../atoms/Button";
+import Heading from "../atoms/Heading";
+import Footer from "../organisms/Footer";
 
 // Extend Window interface to include our custom property
 declare global {
@@ -118,20 +121,15 @@ export default function HomeTemplate({
         subtitle={howItWorksData.subtitle}
         steps={howItWorksData.steps}
       />
+
+      {/* Contact Us Button */}
+      <div className="flex flex-col items-center justify-center">
+        <Heading size="md" className="text-center mb-6 sm:mb-12">Let’s Build Something Smart Together.</Heading>
+        <Button variant="contact" href="/Contact-us">Work with us</Button>
+      </div>
       
       {/* Footer Section */}
-      <footer className="container mx-auto py-8 px-4 mt-8 border-t" id="contact">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
-            <h3 className="text-lg font-bold">SandSpark Digital</h3>
-            <p className="text-sm">Websites that Work. Ideas that Ignite.</p>
-          </div>
-          <div className="text-sm text-center md:text-right">
-            <p>© 2024 SandSpark Digital. All rights reserved.</p>
-            <p>Contact: info@sandsparkdigital.com</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
       
       <ChatBox />
     </>
